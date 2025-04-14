@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalhes do Chamado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    .card {
+      border: 2px solid #007acc;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .status-aberto {
+      color: red;
+      font-weight: bold;
+    }
+
+    .status-concluido {
+      color: green;
+      font-weight: bold;
+    }
+
+    .info-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
+
+    .linha {
+      width: 150px;
+      height: 2px;
+      background-color: #007acc;
+      margin: 20px 0;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    button {
+      background-color: #2eaa56;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #248c46;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div><span class="bold">TÍTULO</span> - ERRO NA IMPRESSORA</div>
+    <div><span class="bold">DESCRIÇÃO</span> - A IMPRESSORA NÃO ESTÁ CONECTANDO À REDE</div>
+
+    <div class="info-row">
+      <div><span class="bold">CATEGORIA</span> - HARDWARE</div>
+      <div><span class="bold">PRIORIDADE</span> - ALTA</div>
+      <div><span class="bold">STATUS</span> - <span id="status" class="status-aberto">ABERTO</span></div>
+    </div>
+
+    <div class="info-row">
+      <div><span class="bold">DATA DE CRIAÇÃO</span> - 01/04/2025</div>
+      <div><span class="bold">DATA DE CONCLUSÃO</span> - <span id="dataConclusao">N/A</span></div>
+    </div>
+
+    <div class="linha"></div>
+
+    <div class="btns">
+      <button onclick="atualizarStatus()">ATUALIZAR STATUS</button>
+      <button onclick="voltar()">VOLTAR</button>
+    </div>
+  </div>
+
+  <script>
+    function atualizarStatus() {
+      const statusEl = document.getElementById('status');
+      const dataConclusaoEl = document.getElementById('dataConclusao');
+
+      if (statusEl.textContent === 'ABERTO') {
+        // Atualiza para "CONCLUÍDO"
+        statusEl.textContent = 'CONCLUÍDO';
+        statusEl.classList.remove('status-aberto');
+        statusEl.classList.add('status-concluido');
+
+        // Define data atual como data de conclusão
+        const hoje = new Date();
+        const dataFormatada = hoje.toLocaleDateString('pt-BR');
+        dataConclusaoEl.textContent = dataFormatada;
+      } else {
+        alert('Este chamado já está concluído.');
+      }
+    }
+
+    function voltar() {
+      alert("Voltar clicado!");
+    }
+  </script>
+</body>
+</html>
