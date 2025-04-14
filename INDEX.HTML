@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Chamados</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f2f4ec;
+      margin: 0;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 800px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #014421;
+      margin-bottom: 30px;
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background-color: #e3e3e3;
+      padding: 12px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    td {
+      background-color: #d4edc9;
+      padding: 12px;
+      border-top: 1px solid #ccc;
+    }
+
+    .btn-ver {
+      background-color: #014421;
+      color: white;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn-ver:hover {
+      background-color: #026e3c;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>CHAMADOS</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>TÍTULO</th>
+        <th>STATUS</th>
+        <th>PRIORIDADE</th>
+        <th>AÇÃO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ERRO NA IMPRESSORA</td>
+        <td>RESOLVIDO</td>
+        <td>ALTA</td>
+        <td><button class="btn-ver" onclick="verDetalhes('ERRO NA IMPRESSORA')">VER DETALHES</button></td>
+      </tr>
+      <tr>
+        <td>PROBLEMA DE REDE</td>
+        <td>ABERTO</td>
+        <td>MÉDIA</td>
+        <td><button class="btn-ver" onclick="verDetalhes('PROBLEMA DE REDE')">VER DETALHES</button></td>
+      </tr>
+      <tr>
+        <td>INSTALAÇÃO DE HARDWARE</td>
+        <td>ABERTO</td>
+        <td>BAIXA</td>
+        <td><button class="btn-ver" onclick="verDetalhes('INSTALAÇÃO DE HARDWARE')">VER DETALHES</button></td>
+      </tr>
+      <tr>
+        <td>MANUTENÇÃO PREVENTIVA</td>
+        <td>RESOLVIDO</td>
+        <td>BAIXA</td>
+        <td><button class="btn-ver" onclick="verDetalhes('MANUTENÇÃO PREVENTIVA')">VER DETALHES</button></td>
+      </tr>
+      <tr>
+        <td>REPARO DE EQUIPAMENTO</td>
+        <td>ABERTO</td>
+        <td>ALTA</td>
+        <td><button class="btn-ver" onclick="verDetalhes('REPARO DE EQUIPAMENTO')">VER DETALHES</button></td>
+      </tr>
+      <tr>
+        <td>SUPORTE EM ATUALIZAÇÃO</td>
+        <td>RESOLVIDO</td>
+        <td>MÉDIA</td>
+        <td><button class="btn-ver" onclick="verDetalhes('SUPORTE EM ATUALIZAÇÃO')">VER DETALHES</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  function verDetalhes(titulo) {
+    alert("Detalhes do chamado: " + titulo);
+  }
+</script>
+
+</body>
+</html>
